@@ -1,0 +1,15 @@
+{
+  "env": {
+    "test": {
+      "presets": [
+        ["env", { "modules": "commonjs" }]
+      ]
+    },
+    "build": {
+       "presets": [
+          ["env", { "modules": false }]
+        ]
+     }
+  },
+  "plugins": ["external-helpers", "transform-runtime"]
+}

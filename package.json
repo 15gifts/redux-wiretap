@@ -1,0 +1,44 @@
+{
+  "name": "@15gifts/redux-wiretap",
+  "version": "1.0.0",
+  "main": "build/index.js",
+  "license": "MIT",
+  "scripts": {
+    "build": "BABEL_ENV=build ./node_modules/rollup/bin/rollup -c",
+    "lint": "./node_modules/eslint/bin/eslint.js src",
+    "precommit": "yarn lint && yarn test && yarn build && git add .",
+    "test": "BABEL_ENV=test jest --no-cache"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-plugin-external-helpers": "^6.22.0",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-preset-env": "^1.7.0",
+    "eslint": "^4.19.1",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-plugin-import": "^2.11.0",
+    "husky": "^0.14.3",
+    "jest": "^22.4.3",
+    "redux": "^3.7.2",
+    "rollup": "^0.60.4",
+    "rollup-plugin-babel": "^3.0.4",
+    "rollup-plugin-uglify": "^4.0.0"
+  },
+  "author": "15gifts",
+  "contributors": [
+    {
+      "name": "Ollie Silviotti",
+      "email": "ollie.silviotti@15gifts.com"
+    }
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/15gifts/redux-wiretap"
+  },
+  "dependencies": {
+    "babel-runtime": "^6.26.0"
+  },
+  "files": [
+    "build"
+  ]
+}
