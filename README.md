@@ -2,8 +2,12 @@
 
 `redux-wiretap` is a Redux [middleware](https://redux.js.org/advanced/middleware) that allows you to spy on actions as they arrive at your store. This allows you to react to your app's state without changing it's logic - e.g. for making requests to a tracking API.
 
-[![npm version](https://img.shields.io/npm/v/redux-wiretap.svg?style=flat-square)](https://www.npmjs.com/package/@15gifts/redux-wiretap)
+
+[![npm version](https://img.shields.io/npm/v/@15gifts/redux-wiretap.svg)](https://www.npmjs.com/package/@15gifts/redux-wiretap)
 [![npm downloads](https://img.shields.io/npm/dm/redux-wiretap.svg?style=flat-square)](https://www.npmjs.com/package/@15gifts/redux-wiretap)
+
+
+
 
 ## Install
 
