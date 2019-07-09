@@ -6,7 +6,7 @@
   "scripts": {
     "build": "BABEL_ENV=build ./node_modules/rollup/bin/rollup -c",
     "lint": "./node_modules/eslint/bin/eslint.js src",
-    "precommit": "yarn lint && yarn test && yarn build && git add .",
+    "precommit": "npm run lint && npm run test && npm run build && git add .",
     "test": "BABEL_ENV=test jest --no-cache"
   },
   "devDependencies": {
