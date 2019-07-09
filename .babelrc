@@ -2,14 +2,14 @@
   "env": {
     "test": {
       "presets": [
-        ["env", { "modules": "commonjs" }]
+        ["@babel/preset-env", { "modules": "commonjs" }]
       ]
     },
     "build": {
-       "presets": [
-          ["env", { "modules": false }]
-        ]
-     }
+      "presets": [
+        ["@babel/preset-env", { "modules": false }]
+      ]
+    }
   },
-  "plugins": ["external-helpers", "transform-runtime"]
+  "plugins": ["@babel/plugin-external-helpers", "@babel/plugin-transform-runtime"]
 }

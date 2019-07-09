@@ -13,7 +13,7 @@ export default [
       { file: pkg.main, format: 'cjs' },
     ],
     plugins: [
-      babel({ exclude: ['node_modules/**'] }),
+      babel({ exclude: ['node_modules/**'], runtimeHelpers: true }),
       uglify(),
     ],
   },

@@ -29,7 +29,7 @@ describe('utils', () => {
       expect(isFunction(() => {})).toBe(true);
       // eslint-disable-next-line func-names, prefer-arrow-callback
       expect(isFunction(function () {})).toBe(true);
-      expect(isFunction(Array.findIndex)).toBe(true);
+      expect(isFunction(Array.isArray)).toBe(true);
     });
 
     it('should return `false` if the supplied variable is not a function', () => {

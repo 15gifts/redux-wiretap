@@ -12,13 +12,7 @@
 ## Install
 
 ```sh
-yarn add @15gifts/redux-wiretap
-```
-
-or
-
-```sh
-npm install --save @15gifts/redux-wiretap
+npm i @15gifts/redux-wiretap
 ```
 
 ## Usage
@@ -46,16 +40,16 @@ The config passed into the `reduxWiretap` function can contain the following pro
 {
   // A function that always gets called before an action is executed
   beforeAnyAction: (contextVariables) => {},
-  
+
   // A function that gets called before `callback` if the `point` is valid
   beforeCallback: (data, contextVariables) => {},
-  
+
   // A function that will get called if the `point` is valid
   callback: (data, contextVariables) => {},
-  
+
   // A function that gets called after `callback` if the `point` is valid
   afterCallback: (data, contextVariables) => {},
-  
+
   // A function that always gets called after an action is executed
   afterAnyAction: (contextVariables) => {},
 
