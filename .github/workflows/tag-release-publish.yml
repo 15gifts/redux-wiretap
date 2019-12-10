@@ -55,21 +55,22 @@ jobs:
     - name: Push changes
       uses: ad-m/github-push-action@master
       with:
-
         github_token: ${{ secrets.GITHUB_TOKEN }}
 
 
     - name: Publish
       run: npm publish
 
-    - uses: actions/setup-node@v1
-      with:
-        node-version: 12
-        registry-url: https://registry.npmjs.org/
-        scope: '@15gifts'
-      env:
-        NODE_AUTH_TOKEN: ${{secrets.node_token}}
+    # - name: Setup npm publish
+    #   uses: actions/setup-node@v1
+    #   with:
+    #     node-version: 12
+    #     registry-url: https://registry.npmjs.org/
+    #     scope: '@15gifts'
+    #   env:
+    #     NODE_AUTH_TOKEN: ${{secrets.node_token}}
 
-    - run: npm publish --access public
-      env:
-        NODE_AUTH_TOKEN: ${{secrets.node_token}}
+    # - name: Publish to npm
+    #   run: npm publish --access public
+    #   env:
+        # NODE_AUTH_TOKEN: ${{secrets.node_token}}
