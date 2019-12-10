@@ -1,0 +1,62 @@
+name: Tag release and publish
+
+on:
+  push:
+    branches:
+    - master
+
+jobs:
+  tag:
+
+    runs-on: ubuntu-latest
+    env:
+      GITHUB_REGISTRY_TOKEN_15G: ${{ secrets.GITHUB_TOKEN }}
+      NODE_AUTH: ${{ secrets.GITHUB_TOKEN }}
+
+    steps:
+    - name: Checkout repo
+      uses: actions/checkout@v1
+
+    - name: Use Node.js 10
+      uses: actions/setup-node@v1
+      with:
+        node-version: '10.x'
+        registry-url: https://npm.pkg.github.com/15gifts
+      env:
+        NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+    - name: Install deps
+      run: npm ci
+
+    - name: Run tests
+      run: npm test
+
+    - name: Build
+      run: npm run build
+
+    - name: Setup git
+      run: |
+        git switch -c master
+        git config user.email "$GITHUB_ACTOR@users.noreply.github.com"
+        git config user.name "$GITHUB_ACTOR"
+
+    - name: Tag as minor
+      if: "contains(github.event.head_commit.message, 'from 15gifts/release')"
+      run: |
+        npm version minor
+
+    - name: Tag as patch
+      if: "!contains(github.event.head_commit.message, 'from 15gifts/release')"
+      run: |
+        npm version patch
+
+    - name: Push changes
+      uses: ad-m/github-push-action@master
+      with:
+
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+
+
+    - name: Publish
+      run: npm publish
