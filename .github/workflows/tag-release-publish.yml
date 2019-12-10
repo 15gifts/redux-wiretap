@@ -21,9 +21,10 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: '10.x'
-        registry-url: https://registry.npmjs.org/
+        registry-url: https://npm.pkg.github.com
+        scope: '@15gifts'
       env:
-        NODE_AUTH_TOKEN: ${{ secrets.node_token }}
+        NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
     - name: Install deps
@@ -54,7 +55,9 @@ jobs:
     - name: Push changes
       uses: ad-m/github-push-action@master
       with:
+
         github_token: ${{ secrets.GITHUB_TOKEN }}
+
 
     - name: Publish
       run: npm publish
