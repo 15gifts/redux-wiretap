@@ -26,7 +26,7 @@
     "build": "BABEL_ENV=build rollup -c",
     "lint": "eslint src",
     "precommit": "npm run lint && npm run test && npm run build && git add .",
-    "test": "BABEL_ENV=test jest --no-cache"
+    "test": "BABEL_ENV=test GITHUB_REGISTRY_TOKEN_15G=null jest --no-cache"
   },
   "devDependencies": {
     "@babel/cli": "^7.7.5",
