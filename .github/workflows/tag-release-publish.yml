@@ -69,4 +69,6 @@ jobs:
       env:
         NODE_AUTH_TOKEN: ${{secrets.node_token}}
 
-    - run: npm publish
+    - run: npm publish --access public
+      env:
+        NODE_AUTH_TOKEN: ${{secrets.node_token}}
