@@ -61,3 +61,12 @@ jobs:
 
     - name: Publish
       run: npm publish
+
+    - uses: actions/setup-node@v1
+      with:
+        node-version: 12
+        registry-url: https://registry.npmjs.org/
+      env:
+        NODE_AUTH_TOKEN: ${{secrets.node_token}}
+
+    - run: npm publish
