@@ -1,15 +1,24 @@
 {
+  "presets": [
+    ["@babel/env"]
+  ],
+  "plugins": [
+    ["@babel/plugin-transform-runtime", {
+      "corejs": 3
+    }]
+  ],
   "env": {
     "test": {
       "presets": [
-        ["@babel/preset-env", { "modules": "commonjs" }]
-      ]
-    },
-    "build": {
-      "presets": [
-        ["@babel/preset-env", { "modules": false }]
+        [
+          "@babel/env", {
+            "modules": "commonjs",
+            "targets": {
+              "node": "current"
+            }
+          }
+        ]
       ]
     }
-  },
-  "plugins": ["@babel/plugin-external-helpers", "@babel/plugin-transform-runtime"]
+  }
 }
