@@ -28,7 +28,7 @@ module.exports = {
           loader: 'babel-loader',
           options: {
             // For some reason the babelrc isn't picked up
-            configFile: resolve(__dirname, '.babelrc'),
+            configFile: resolve(__dirname, '.babelrc.js'),
           },
         },
       },
