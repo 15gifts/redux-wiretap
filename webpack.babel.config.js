@@ -10,9 +10,7 @@ module.exports = {
     publicPath: '/',
     path: resolve(__dirname, 'build'),
     filename: 'index.js',
-    library: 'reduxWiretap',
     libraryTarget: 'umd',
-    libraryExport: 'default',
   },
   resolve: {
     extensions: ['.js', '.jsx'],
