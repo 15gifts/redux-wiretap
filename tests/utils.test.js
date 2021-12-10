@@ -1,4 +1,4 @@
-import { arrayIncludes, isFunction, isString } from '../src/utils';
+import { arrayIncludes, isFunction, isString, keyExists } from '../src/utils';
 
 describe('utils', () => {
   describe('arrayIncludes', () => {
@@ -47,6 +47,16 @@ describe('utils', () => {
     test('returns false if the supplied value is not a string', () => {
       expect(isString(123)).toBe(false);
       expect(isString(() => true)).toBe(false);
+    });
+  });
+
+  describe('keyExists', () => {
+    test('returns true if the supplied key exists in the supplied object', () => {
+      expect(keyExists({ name: undefined }, 'name')).toBe(true);
+    });
+
+    test("returns false if the supplied key doesn't exist in the supplied object", () => {
+      expect(keyExists({ name: undefined }, 'otherName')).toBe(false);
     });
   });
 });

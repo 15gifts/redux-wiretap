@@ -1,4 +1,4 @@
-import { arrayIncludes, isFunction, isString } from './utils';
+import { arrayIncludes, isFunction, isString, keyExists } from './utils';
 import VarsHandler from './vars';
 
 export function actionMatches(triggerAction, actionType) {
@@ -47,7 +47,7 @@ export function filterPoints(contextVariables = {}) {
       .filter(point => actionMatches(point.triggerAction, action.type))
       .map(point => (point.logic ? point.logic(contextVariables) : point))
       .filter(point => !!point)
-      .filter(point => (point.shouldFire !== undefined ? !!point.shouldFire : true));
+      .filter(point => (keyExists(point, 'shouldFire') ? !!point.shouldFire : true));
   }
 
   return [];
