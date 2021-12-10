@@ -17,3 +17,7 @@ export function isFunction(toCheck) {
 export function isString(toCheck) {
   return typeof toCheck === 'string';
 }
+
+export function keyExists(object, key) {
+  return Object.prototype.hasOwnProperty.call(object, key);
+}
