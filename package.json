@@ -1,6 +1,6 @@
 {
   "name": "@15gifts/redux-wiretap",
-  "version": "1.0.27",
+  "version": "1.0.28",
   "main": "build/index.js",
   "license": "MIT",
   "author": "15gifts",
